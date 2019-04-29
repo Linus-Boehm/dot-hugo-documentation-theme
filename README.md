@@ -3,15 +3,15 @@
 # [Dot Hugo](https://gethugothemes.com/)
 
 [![GitHub stars](https://img.shields.io/github/stars/themefisher/dot-hugo-documentation-theme.svg)](https://github.com/themefisher/dot-hugo-documentation-theme/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/themefisher/dot-hugo-documentation-theme.svg)](https://github.com/themefisher/dot-hugo-documentation-theme/issues) 
-[![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/themefisher/dot-hugo-documentation-theme.svg?maxAge=2592000)]() 
+[![GitHub issues](https://img.shields.io/github/issues/themefisher/dot-hugo-documentation-theme.svg)](https://github.com/themefisher/dot-hugo-documentation-theme/issues)
+[![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/themefisher/dot-hugo-documentation-theme.svg?maxAge=2592000)]()
 [![GitHub forks](https://img.shields.io/github/forks/themefisher/dot-hugo-documentation-theme.svg)](https://github.com/themefisher/dot-hugo-documentation-theme/network)
 
 <img src="https://user-images.githubusercontent.com/37659754/54081086-cc7ce200-4328-11e9-9f7d-74d9b32fa68c.gif" alt="screenshot" width="100%">
 
 </div>
 
-Dot, a responsive and feature reach documentation theme ever build in hugo eco system . We have analysised a lot of documentation and knowledge base theme to come up with this design . The readability and the cleaness is also another key feature of this theme. 
+Dot, a responsive and feature reach documentation theme ever build in hugo eco system . We have analysised a lot of documentation and knowledge base theme to come up with this design . The readability and the cleaness is also another key feature of this theme.
 
 ## Table of Contents
 
@@ -50,7 +50,7 @@ $ git clone git@github.com:themefisher/navigator-hugo.git
 - Syntax highlighting
 - Multilingual mode
 - Bootstrap 4 Powered
-- Google Analytics 
+- Google Analytics
 - Color Scheme
 - Next/Prev buttons in single post page
 - Contact Page , Faq Page
@@ -64,7 +64,7 @@ If your problem or idea is not addressed yet, [open a new issue](https://github.
 
 ## Technical Support or Questions
 
-If you have questions or need help integrating the product please [contact us](mailto:themefisher@gmail.com) instead of opening an issue.  
+If you have questions or need help integrating the product please [contact us](mailto:themefisher@gmail.com) instead of opening an issue.
 
 ## Hire Us
 We are available for Hiring of your next HUGO project. Drop Us a mail [themefisher@gmail.com](mailto:themefisher@gmail.com)
