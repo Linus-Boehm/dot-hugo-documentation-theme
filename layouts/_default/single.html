@@ -65,11 +65,11 @@
             <a class="nav nav-next" href="{{ .URL }}" title="{{ .Title }}">{{ .Title }}<i class="ti-arrow-right ml-2"></i></a>
             {{- end }}
             </nav>
-    
+
             {{- define "pagination" -}}
             {{- $currentNode := .currentnode -}}
             {{- $menu_exclusion := .menu_exclusion -}}
-    
+
             {{- if hasPrefix $currentNode.URL .menu.URL -}}
               {{- $currentNode.Scratch.Set "NextPageOK" "OK" -}}
               {{- if .menu.IsHome -}}
@@ -86,7 +86,7 @@
                 {{- end -}}
               {{- end -}}
             {{- end -}}
-    
+
             {{- $currentNode.Scratch.Set "prevPageTmp" .menu -}}
             {{- $currentNode.Scratch.Set "pages" .menu.Pages -}}
             {{- if .menu.IsHome -}}
