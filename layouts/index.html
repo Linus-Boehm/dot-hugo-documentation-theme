@@ -8,14 +8,28 @@
               {{with .Site.Params.topics.title}} <h2 class="section-title">{{ . }}</h2> {{ end }}
             </div>
             {{ "<!-- topic-item -->" | safeHTML }}
-            {{ range (where .Site.Pages "Type" "pages") }}
-            <div class="col-lg-4 col-sm-6 mb-4">
-              <a href="{{ .Permalink }}" class="px-4 py-5 bg-white shadow text-center d-block">
-                <i class="{{ .Params.Icon }} icon text-dark d-block mb-4"></i>
-                <h3 class="mb-3">{{ .Title }}</h3>
-                <p class="mb-0">{{ .Params.Description }}</p>
-              </a>
-            </div>
+            {{ range (where .Site.Sections "Type" "pages") }}
+	    <div class="col-lg-4 col-sm-6 mb-4">
+		<div class="px-5 py-5 bg-white shadow d-block h-100">
+		    <div class="row">
+			<div class="col-3 h-100">
+			    <i class="{{ .Params.Icon }} icon text-dark d-block mb-4"></i>
+			</div>
+			<div class="col h-100">
+			    <a href="{{ .Permalink }}">
+				<h5 class="mb-3">{{ .Title }}</h5>
+			    </a>
+			    <p class="mb-3">{{ .Params.Description }}</p>
+			    <ul class="list-unstyled mb-3">
+				{{ range  first 3 .Pages }}
+				<li><a class="p-0" href="{{ .Permalink }}">{{ .Title }}</a></li>
+				{{ end }}
+				<li><a class="p-0 mt-3" href="{{ .Permalink }}">+ More</a></li>
+			    </ul>
+			</div>
+		    </div>
+		</div>
+	    </div>
             {{ end }}
         </div>
     </div>
