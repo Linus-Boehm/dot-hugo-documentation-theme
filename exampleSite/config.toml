@@ -24,17 +24,17 @@ whiteColor = "#ffffff"
 
     # navigation
     [Languages.en.menu]
-    
+
       [[Languages.en.menu.main]]
         weight = 2
         name = "Faq"
         url = "/faq"
-        
+
       [[Languages.en.menu.main]]
         weight = 2
         name = "contact"
         url = "/contact"
-        
+
       [[Languages.en.menu.main]]
         weight = 2
         name = "pages"
@@ -78,7 +78,7 @@ whiteColor = "#ffffff"
     # Topics
     [Languages.en.params.topics]
       title = "Find your answer by subject"
-    
+
     # call to action
     [Languages.en.params.cta]
       enable = true
@@ -100,11 +100,11 @@ whiteColor = "#ffffff"
     [[Languages.en.socialIcon]]
       icon = "ti-twitter-alt"
       URL = "/#"
-      
+
     [[Languages.en.socialIcon]]
       icon = "ti-vimeo-alt"
       URL = "/#"
-      
+
     [[Languages.en.socialIcon]]
       icon = "ti-instagram"
       URL = "/#"
@@ -126,7 +126,7 @@ whiteColor = "#ffffff"
 
     # navigation
     [Languages.fr.menu]
-    
+
       [[Languages.fr.menu.main]]
         weight = 2
         name = "Faq"
@@ -176,7 +176,7 @@ whiteColor = "#ffffff"
     # pages
     [Languages.fr.params.pages]
       title = "Parcourir tous les sujets"
-    
+
     # call to action
     [Languages.fr.params.cta]
       enable = true
@@ -198,11 +198,11 @@ whiteColor = "#ffffff"
     [[Languages.fr.socialIcon]]
       icon = "ti-twitter-alt"
       URL = "/#"
-      
+
     [[Languages.fr.socialIcon]]
       icon = "ti-vimeo-alt"
       URL = "/#"
-      
+
     [[Languages.fr.socialIcon]]
       icon = "ti-instagram"
       URL = "/#"
