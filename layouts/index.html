@@ -8,7 +8,7 @@
               {{with .Site.Params.topics.title}} <h2 class="section-title">{{ . }}</h2> {{ end }}
             </div>
             {{ "<!-- topic-item -->" | safeHTML }}
-            {{ range (where .Site.Sections "Type" "pages") }}
+            {{ range (where .Site.Sections "Type" "topics") }}
 	    <div class="col-lg-4 col-sm-6 mb-4">
 		<div class="px-5 py-5 bg-white shadow d-block h-100">
 		    <div class="row">
