@@ -17,14 +17,14 @@
 			</div>
 			<div class="col h-100">
 			    <a href="{{ .Permalink }}">
-				<h5 class="mb-3">{{ .Title }}</h5>
+				<h5 class="mb-4">{{ .Title }}</h5>
 			    </a>
-			    <p class="mb-3">{{ .Params.Description }}</p>
-			    <ul class="list-unstyled mb-3">
+			    <p class="mb-4">{{ .Params.Description }}</p>
+			    <ul class="list-unstyled mb-4">
 				{{ range  first 3 .Pages }}
 				<li><a class="p-0" href="{{ .Permalink }}">{{ .Title }}</a></li>
 				{{ end }}
-				<li><a class="p-0 mt-3" href="{{ .Permalink }}">+ More</a></li>
+				<li><a class="p-0 mt-4" href="{{ .Permalink }}">+ More</a></li>
 			    </ul>
 			</div>
 		    </div>
