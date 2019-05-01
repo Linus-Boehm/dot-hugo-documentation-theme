@@ -7,9 +7,9 @@
 	</a>
 	<ul id="{{ .currentMenu.Name }}" class="collapse">
 	    {{ range .currentMenu.Children }}
-		{{ if in .URL ($indexScratch.Get "pageURL") }}
+		{{/* if in .URL ($indexScratch.Get "pageURL") */}}
 		{{ partial "aside-list" (dict "currentMenu" . "indexScratch" $indexScratch) }}
-		{{ end }}
+		{{/* end */}}
 	    {{ end }}
 	</ul>
     </li>
