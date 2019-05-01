@@ -7,7 +7,7 @@
 	</a>
 	<ul class="sub-menu">
 	    {{ range .currentMenu.Children }}
-		{{ if in .URL ($indexScratch.Get "pagePath") }}
+		{{ if in .URL ($indexScratch.Get "pageURL") }}
 		{{ partial "aside-list" (dict "currentMenu" . "indexScratch" $indexScratch) }}
 		{{ end }}
 	    {{ end }}
