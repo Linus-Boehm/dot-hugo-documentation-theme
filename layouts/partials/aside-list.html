@@ -1,11 +1,11 @@
 {{ $indexScratch := .indexScratch }}
 {{ if .currentMenu.HasChildren }}
     <li>
-	<a href="{{ .currentMenu.URL }}">
+	<a data-toggle="collapse" data-target="#{{ .currentMenu.Name }}">
 	    {{ .currentMenu.Pre }}
 	    <span>{{ .currentMenu.Name }}</span>
 	</a>
-	<ul class="sub-menu">
+	<ul id="{{ .currentMenu.Name }}" class="collapse">
 	    {{ range .currentMenu.Children }}
 		{{ if in .URL ($indexScratch.Get "pageURL") }}
 		{{ partial "aside-list" (dict "currentMenu" . "indexScratch" $indexScratch) }}
