@@ -5,14 +5,14 @@
 	    {{ .currentMenu.Pre }}
 	    <span>{{ .currentMenu.Name }}</span>
 	</a>
-    </li>
-    <ul class="sub-menu">
-	{{ range .currentMenu.Children }}
-	    {{ if in .URL ($indexScratch.Get "pageURL") }}
-	    {{ partial "aside-list" (dict "currentMenu" . "indexScratch" $indexScratch) }}
+	<ul class="sub-menu">
+	    {{ range .currentMenu.Children }}
+		{{ if in .URL ($indexScratch.Get "pagePath") }}
+		{{ partial "aside-list" (dict "currentMenu" . "indexScratch" $indexScratch) }}
+		{{ end }}
 	    {{ end }}
-	{{ end }}
-    </ul>
+	</ul>
+    </li>
     {{ else }}
     <li>
 	<a href="{{ .currentMenu.URL }}">
