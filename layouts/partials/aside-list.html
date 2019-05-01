@@ -1,0 +1,23 @@
+{{ $indexScratch := .indexScratch }}
+{{ if .currentMenu.HasChildren }}
+    <li>
+	<a href="{{ .currentMenu.URL }}">
+	    {{ .currentMenu.Pre }}
+	    <span>{{ .currentMenu.Name }}</span>
+	</a>
+    </li>
+    <ul class="sub-menu">
+	{{ range .currentMenu.Children }}
+	    {{ if in .URL ($indexScratch.Get "pageURL") }}
+	    {{ partial "aside-list" (dict "currentMenu" . "indexScratch" $indexScratch) }}
+	    {{ end }}
+	{{ end }}
+    </ul>
+    {{ else }}
+    <li>
+	<a href="{{ .currentMenu.URL }}">
+	    {{ .currentMenu.Pre }}
+	    <span>{{ .currentMenu.Name }}</span>
+	</a>
+    </li>
+{{ end }}
