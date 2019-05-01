@@ -525,7 +525,7 @@ ul li a {
   display: block;
   font-size: 15px;
   font-weight: 600;
-  padding: 10px 0;
+  padding: 2px 0;
 }
 
 .post-meta {
@@ -552,13 +552,13 @@ blockquote {
 .list-styled li::before {
   position: absolute;
   content: '';
-  height: 8px;
+  height: 2px;
   width: 8px;
-  border-radius: 50%;
-  background: var(--primary-color);
+  /* border-radius: 50%; */
+  background: var(--gray);
   opacity: .3;
   left: 0;
-  top: 18px;
+  top: 14px;
 }
 
 .pagination {
