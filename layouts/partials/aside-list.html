@@ -1,7 +1,7 @@
 {{ $indexScratch := .indexScratch }}
 {{ if .currentMenu.HasChildren }}
     <li>
-	<a data-toggle="collapse" data-target="#{{ .currentMenu.Name }}">
+	<a data-toggle="collapse" href="#{{ .currentMenu.Name }}">
 	    {{ .currentMenu.Pre }}
 	    <span>{{ .currentMenu.Name }}</span>
 	</a>
