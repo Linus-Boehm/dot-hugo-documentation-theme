@@ -405,6 +405,11 @@ pre {
 
 .banner .navbar-brand{
   color: var(--white-color) !important;
+  max-width: 20%;
+}
+
+.banner .navbar-brand img {
+    margin-bottom: -20%;
 }
 
 /* search */
