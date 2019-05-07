@@ -16,7 +16,7 @@
 		<h6>Products</h6>
 		<ul>
 		{{ range .Site.Menus.main }}
-		    <li><a class="paragraph p-0" href="{{ .URL }}"> {{ .Name }} </a></li>
+		    <li><a class="paragraph p-0" href="{{ .URL }}"> {{ .Name | upper }} </a></li>
 		{{ end }}
 		</ul>
 	    </div>
@@ -25,7 +25,7 @@
 		<h6>API Documentation</h6>
 		<ul>
 		{{ range .Site.Menus.api }}
-		    <li><a class="paragraph p-0" href="{{ .URL }}"> {{ .Name }} </a></li>
+		    <li><a class="paragraph p-0" href="{{ .URL }}"> {{ .Name | upper }} </a></li>
 		{{ end }}
 		</ul>
 	    </div>
