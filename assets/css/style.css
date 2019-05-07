@@ -210,7 +210,7 @@ pre {
   width: 100%;
   top: 0;
   left: 0;
-  background-image: linear-gradient(227deg, #3a7fe6, #063583);
+  background-image: linear-gradient(227deg, #3a7fe6, #063583), var(--primary-color);
 }
 
 .overlay::before {
