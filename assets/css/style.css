@@ -309,6 +309,11 @@ pre {
   padding: 18px 15px !important;
 }
 
+.nav-item:hover {
+    /* inset v-offset h-offset blur spread color */
+    box-shadow: inset 0px 0px 0px 200px rgba(0,0,0,0.2);
+}
+
 .navbar .dropdown:hover .dropdown-menu {
   visibility: visible;
   opacity: 1;
