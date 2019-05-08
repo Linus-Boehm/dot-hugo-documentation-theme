@@ -8,12 +8,12 @@
 	    </div>
 	    <!-- ABOUT US -->
 	    <div class="col-md-3 text-md-left text-center">
-		<h6>About Us</h6>
+		<h6>{{ "About Us" | upper }}</h6>
 		<p>{{ .Site.Params.info.about }}</p>
 	    </div>
 	    <!-- PRODUCTS -->
 	    <div class="col-md-2 text-md-left text-center">
-		<h6>Products</h6>
+		<h6>{{ "Products" | upper }}</h6>
 		<ul>
 		{{ range .Site.Menus.main }}
 		    <li><a class="paragraph p-0" href="{{ .URL }}"> {{ .Name | upper }} </a></li>
@@ -22,7 +22,7 @@
 	    </div>
 	    <!-- API DOC -->
 	    <div class="col-md-2 text-md-left text-center">
-		<h6>API Documentation</h6>
+		<h6>{{ "API Documentation" | upper }}</h6>
 		<ul>
 		{{ range .Site.Menus.api }}
 		    <li><a class="paragraph p-0" href="{{ .URL }}"> {{ .Name | upper }} </a></li>
@@ -31,7 +31,7 @@
 	    </div>
 	    <!-- Contact -->
 	    <div class="col-md-3 text-md-left text-center">
-		<h6>Contact</h6>
+		<h6>{{ "Contact" | upper }}</h6>
 		<div class="row">
 		    <div class="col">
 			<p>
