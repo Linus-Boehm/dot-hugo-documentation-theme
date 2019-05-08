@@ -1,19 +1,18 @@
-.rectangle-admin {
+.rectangle {
+    cursor: pointer;
+    height: 10px;
+    margin-bottom: 5px;
+}
+.admin {
     background-color: var(--blue-one);
-    height: 10px;
-    margin-bottom: 5px;
 }
 
-.rectangle-reports {
+.reports {
     background-color: var(--blue-two);
-    height: 10px;
-    margin-bottom: 5px;
 }
 
-.rectangle-web {
+.web {
     background-color: var(--blue-three);
-    height: 10px;
-    margin-bottom: 5px;
 }
 
 .topic-icon {
