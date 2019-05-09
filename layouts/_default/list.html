@@ -15,11 +15,6 @@
 		    {{ range .Children }}
 			{{ if .HasChildren }}
 			    {{ range .Children }}
-			    {
-			      value: "{{ .Name | humanize | title }}",
-			      label: "{{ .Name | humanize | title }}",
-			      url:"{{ .URL }}"
-			    },
 				{{ if .HasChildren }}
 				    {{ range .Children }}
 				    {
@@ -28,8 +23,20 @@
 				      url:"{{ .URL }}"
 				    },
 				    {{ end }}
+				{{ else }}
+				    {
+				      value: "{{ .Name | humanize | title }}",
+				      label: "{{ .Name | humanize | title }}",
+				      url:"{{ .URL }}"
+				    },
 				{{ end }}
 			    {{ end }}
+			{{ else }}
+			    {
+			      value: "{{ .Name | humanize | title }}",
+			      label: "{{ .Name | humanize | title }}",
+			      url:"{{ .URL }}"
+			    },
 			{{ end }}
 		    {{ end }}
                   {{ end }}
