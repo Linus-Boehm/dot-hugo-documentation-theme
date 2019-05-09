@@ -1,3 +1,10 @@
+.logo-header {
+    filter:drop-shadow( 0px 9px 22px rgba(3, 114, 217, .9))
+}
+.logo {
+    margin-bottom: 0;
+    max-width: 160px;
+}
 .side-item {
     padding: 2px 0;
 }
@@ -447,9 +454,11 @@ pre {
   max-width: 19%;
 }
 
+/*
 .navbar-brand img {
     margin-bottom: -15%;
 }
+*/
 
 /* search */
 

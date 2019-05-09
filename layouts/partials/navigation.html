@@ -1,6 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="{{ .Site.BaseURL }}">
-    <img class="logo" src="{{ .Site.Params.logoHeader | absURL }}" alt="Logo Header">
+      {{ if eq .Kind "home" }}
+	<img class="logo logo-header" src="{{ .Site.Params.logoHeader | absURL }}" alt="Logo Header">
+	{{ else }}
+	<img class="logo" src="{{ .Site.Params.logoFooter | absURL }}" alt="Logo Header">
+	{{ end }}
   </a>
   <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
     aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
