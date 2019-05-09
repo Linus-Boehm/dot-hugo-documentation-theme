@@ -8,7 +8,7 @@
 <div class="col-lg-3">
     <div class="mb-5 bg-white p-4">
 	{{ range where .Site.Menus.main "Name" .Section}}
-	    <a href="{{ .URL }}">
+	    <a class="side-item" href="{{ .URL }}">
 		<h4 class="mb-4">{{ .Name | title }}</h4>
 	    </a>
 	<ul class="list-styled">

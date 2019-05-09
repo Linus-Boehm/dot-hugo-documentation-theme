@@ -11,12 +11,18 @@
             <script>
               $(function() {
                 var projects = [
-                  {{ range .Pages }}
-                    {
-                      value: "{{ .Title }}",
-                      label: "{{ .Title }}",
-                      url:"{{ .Permalink }}"
-                    },
+                  {{ range where .Site.Menus.main "Name" .Section }}
+		    {{ range .Children }}
+			{{ if .HasChildren }}
+			    {{ range .Children }}
+			    {
+			      value: "{{ .Name | humanize | title }}",
+			      label: "{{ .Name }}",
+			      url:"{{ .URL }}"
+			    },
+			    {{ end }}
+			{{ end }}
+		    {{ end }}
                   {{ end }}
                 ];
                 $( "#search" ).autocomplete({
