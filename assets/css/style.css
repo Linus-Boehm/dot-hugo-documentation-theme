@@ -479,6 +479,12 @@ pre {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
 }
 
+@media (min-width: 494px) {
+  .ui-menu {
+    max-width: 464px !important;
+  }
+}
+
 @media (min-width: 576px) {
   .ui-menu {
     max-width: 510px !important;
