@@ -8,18 +8,19 @@
   </button>
 
   <div class="collapse navbar-collapse text-center" id="navigation">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav nav-pills ml-auto">
       <li class="nav-item">
         <a class="nav-link text-dark" href="{{ .Site.BaseURL }}">{{ .Site.Params.home }}</a>
       </li>
+      {{ $currentURL := .URL }}
       {{ range .Site.Menus.main }}
       <li class="nav-item">
-          <a class="nav-link text-dark" href="{{ .URL }}">{{ .Name }}</a>
+	  <a class="nav-link text-dark {{ if in $currentURL .URL }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
       </li>
       {{ end }}
       {{ if .Site.Params.cta.enable }}
       <li class="nav-item">
-	  <a class="nav-link text-dark" href="{{ .Site.Params.cta.URL | absURL }}">{{ .Site.Params.cta.Name }}</a>
+	  <a class="nav-link text-dark {{ if in $currentURL .Site.Params.cta.URL }}active{{ end }}" href="{{ .Site.Params.cta.URL | absURL }}">{{ .Site.Params.cta.Name }}</a>
       </li>
       {{ end }}
     </ul>
