@@ -5,8 +5,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          {{ with .Site.Params.banner.title }} <h1 class="text-white mb-4">{{ . }}</h1> {{ end }}
-          {{ with .Site.Params.banner.placeholder }} <input id="search" class="form-control" placeholder="{{ . }}"> {{ end }}
+          <h1 class="text-white mb-4">{{ .Site.Params.banner.title }}</h1>
+          <input id="search" class="form-control" placeholder="{{ .Site.Params.banner.placeholder }}">
             {{ "<!-- Javascript -->" | safeHTML }}
             <script>
               $(function() {
@@ -17,9 +17,18 @@
 			    {{ range .Children }}
 			    {
 			      value: "{{ .Name | humanize | title }}",
-			      label: "{{ .Name }}",
+			      label: "{{ .Name | humanize | title }}",
 			      url:"{{ .URL }}"
 			    },
+				{{ if .HasChildren }}
+				    {{ range .Children }}
+				    {
+				      value: "{{ .Name | humanize | title }}",
+				      label: "{{ .Name | humanize | title }}",
+				      url:"{{ .URL }}"
+				    },
+				    {{ end }}
+				{{ end }}
 			    {{ end }}
 			{{ end }}
 		    {{ end }}
