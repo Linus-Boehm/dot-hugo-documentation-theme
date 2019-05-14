@@ -531,6 +531,10 @@ pre {
   box-shadow: none !important;
 }
 
+select.form-control:not([size]):not([multiple]) {
+    height: 50px;
+}
+
 textarea.form-control {
   height: 150px;
   padding: 20px;
