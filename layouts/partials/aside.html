@@ -1,5 +1,5 @@
 {{ "<!-- details page -->" | safeHTML }}
-{{ $pageURL := path.Dir (path.Dir .Page.URL) }}
+{{ $pageURL := path.Dir (path.Dir .Page.Permalink ) }}
 {{ if .Page.IsNode }}
 {{ $pageURL = "nope" }}
 {{ end }}
