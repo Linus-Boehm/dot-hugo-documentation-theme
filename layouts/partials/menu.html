@@ -1,10 +1,5 @@
 {{ "<!-- menu -->" | safeHTML }}
-{{ $pageURL := path.Dir (path.Dir .Page.Permalink ) }}
-{{ if .Page.IsNode }}
-{{ $pageURL = "nope" }}
-{{ end }}
-{{ .Scratch.Set "pageURL" $pageURL }}
-{{ $indexScratch := .Scratch }}
+{{ $page := . }}
 <div class="col-lg-3">
     <div class="mb-5 bg-white p-4">
 	{{ range where .Site.Menus.main "Name" .Section}}
@@ -13,7 +8,7 @@
 	    </a>
 	<ul class="list-styled">
 	    {{ range .Children }}
-		{{ partial "menu-recursive" (dict "menu" . "indexScratch" $indexScratch) }}
+		{{ partial "menu-recursive" (dict "menu" . "page" $page) }}
 	    {{ end }}
 	</ul>
 	{{ end }}
