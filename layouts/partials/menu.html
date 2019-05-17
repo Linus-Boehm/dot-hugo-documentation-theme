@@ -1,4 +1,4 @@
-{{ "<!-- details page -->" | safeHTML }}
+{{ "<!-- menu -->" | safeHTML }}
 {{ $pageURL := path.Dir (path.Dir .Page.Permalink ) }}
 {{ if .Page.IsNode }}
 {{ $pageURL = "nope" }}
@@ -13,10 +13,10 @@
 	    </a>
 	<ul class="list-styled">
 	    {{ range .Children }}
-		{{ partial "aside-list" (dict "currentMenu" . "indexScratch" $indexScratch) }}
+		{{ partial "menu-recursive" (dict "menu" . "indexScratch" $indexScratch) }}
 	    {{ end }}
 	</ul>
 	{{ end }}
     </div>
 </div>
-{{ "<!-- /details page -->" | safeHTML }}
+{{ "<!-- /menu -->" | safeHTML }}

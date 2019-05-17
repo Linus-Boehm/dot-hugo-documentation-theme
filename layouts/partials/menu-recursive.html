@@ -1,0 +1,23 @@
+{{ $indexScratch := .indexScratch }}
+{{ if .menu.HasChildren }}
+    <li>
+	<a class="side-item" data-toggle="collapse" href="#{{ .menu.Name }}">
+	    {{ .menu.Pre }}
+	    <span>{{ .menu.Name | humanize | title }}</span>
+	</a>
+	<ul id="{{ .menu.Name }}" class="collapse {{ if hasPrefix .menu.URL ($indexScratch.Get "pageURL") }}show{{ end }}">
+	    {{ range .menu.Children }}
+		{{/* if in .URL ($indexScratch.Get "pageURL") */}}
+		{{ partial "menu-recursive" (dict "menu" . "indexScratch" $indexScratch) }}
+		{{/* end */}}
+	    {{ end }}
+	</ul>
+    </li>
+    {{ else }}
+    <li>
+	<a class="side-item" href="{{ .menu.URL }}">
+	    {{ .menu.Pre }}
+	    <span>{{ .menu.Name | humanize | title }}</span>
+	</a>
+    </li>
+{{ end }}
