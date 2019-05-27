@@ -45,7 +45,7 @@ hugo new installation/first-content.md
 hugo new installation/second-content/_index.md
 ```
 
-Feel free to edit thoses files by adding some sample content and replacing the `title` value in the beginning of the files. 
+Feel free to edit thoses files by adding some sample content and replacing the `title` value in the beginning of the files.
 
 ### Launching the website locally
 

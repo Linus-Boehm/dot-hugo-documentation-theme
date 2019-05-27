@@ -1,22 +1,44 @@
 {{ define "main" }}
 
   {{ "<!-- page title -->" | safeHTML }}
-  <section class="section bg-dark">
+  <section class="section bg-blue-gradient">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          {{ with .Site.Params.banner.title }} <h1 class="text-white mb-4">{{ . }}</h1> {{ end }}
-          {{ with .Site.Params.banner.placeholder }} <input id="search" class="form-control" placeholder="{{ . }}"> {{ end }}
+          <h1 class="text-white mb-4">{{ .Site.Params.banner.title }}</h1>
+          <input id="search" class="form-control" placeholder="{{ .Site.Params.banner.placeholder }}">
             {{ "<!-- Javascript -->" | safeHTML }}
             <script>
               $(function() {
                 var projects = [
-                  {{ range .Data.Pages }}
-                    {
-                      value: "{{ .Title }}",
-                      label: "{{ .Title }}",
-                      url:"{{ .Permalink }}"
-                    },
+                  {{ range where .Site.Menus.main "Name" .Section }}
+		    {{ range .Children }}
+			{{ if .HasChildren }}
+			    {{ range .Children }}
+				{{ if .HasChildren }}
+				    {{ range .Children }}
+				    {
+				      value: "{{ .Name | humanize | title }}",
+				      label: "{{ .Name | humanize | title }}",
+				      url:"{{ .URL }}"
+				    },
+				    {{ end }}
+				{{ else }}
+				    {
+				      value: "{{ .Name | humanize | title }}",
+				      label: "{{ .Name | humanize | title }}",
+				      url:"{{ .URL }}"
+				    },
+				{{ end }}
+			    {{ end }}
+			{{ else }}
+			    {
+			      value: "{{ .Name | humanize | title }}",
+			      label: "{{ .Name | humanize | title }}",
+			      url:"{{ .URL }}"
+			    },
+			{{ end }}
+		    {{ end }}
                   {{ end }}
                 ];
                 $( "#search" ).autocomplete({
@@ -46,24 +68,15 @@
   {{ "<!-- /page title -->" | safeHTML }}
 
   {{ "<!-- details page -->" | safeHTML }}
-  <section class="single section bg-gray pb-0">
+  <section class="single section bg-gray">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3">
-          <div class="mb-5 bg-white p-4 sticky-top">
-            <a href="{{ .Permalink }}">
-              <h4 class="mb-4">{{ .Title }}</h4>
-            </a>
-            <ul class="list-styled">
-              {{ range .Data.Pages }}
-              <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-              {{ end }}
-            </ul>
-          </div>
-        </div>
+	{{ partial "menu" . }}
         <div class="col-lg-9">
           <div class="p-5 bg-white">
               <h2>{{ .Title }}</h2>
+	      {{ .Content }}
+	      <!--
               <div class="bg-gray p-4">
                   <h3 class="mt-0">Article</h3>
                   <ul class="list-unstyled">
@@ -72,6 +85,7 @@
                     {{ end }}
                   </ul>
               </div>
+	      -->
           </div>
         </div>
       </div>

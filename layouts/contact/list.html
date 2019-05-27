@@ -5,12 +5,19 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-       {{ with .Site.Params.contact.title }} <h2 class="section-title text-primary">{{ . }}</h2> {{ end }}
+       {{ with .Site.Params.contact.title }} <h2 class="section-title">{{ . }}</h2> {{ end }}
        {{ with .Site.Params.contact.content }} <p>{{ . | safeHTML }}</p> {{ end }}
-        <form action="#">
+       <form action="https://formspree.io/{{ .Site.Params.contact.formspree_account }}" method="POST" id="contact">
           <input type="text" id="name" name="name" placeholder="Name" class="form-control mb-4 shadow rounded-0">
+	{{ if .Site.Params.contact.categories }}
+	    <select required name="category" form="contact" class="form-control mb-4 shadow rounded-0" name="categories" placeholder="Category">
+	    {{ range .Site.Params.contact.categories }}
+	    {{ printf "%#v" . }}
+	    <option value="{{ . }}">{{ . }}</option>
+	    {{ end }}
+	{{ end }}
           <input type="email" id="mail" name="mail" placeholder="Email" class="form-control mb-4 shadow rounded-0">
-          <input type="text" id="subject" name="subject" placeholder="subject" class="form-control mb-4 shadow rounded-0">
+          <input type="text" id="subject" name="subject" placeholder="Subject" class="form-control mb-4 shadow rounded-0">
           <textarea name="message" id="message" placeholder="Message" class="form-control mb-4 shadow rounded-0"></textarea>
           <button type="submit" value="send" class="btn btn-primary">Send</button>
         </form>

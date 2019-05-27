@@ -8,14 +8,17 @@
               {{with .Site.Params.topics.title}} <h2 class="section-title">{{ . }}</h2> {{ end }}
             </div>
             {{ "<!-- topic-item -->" | safeHTML }}
-            {{ range (where .Site.Pages "Type" "pages") }}
-            <div class="col-lg-4 col-sm-6 mb-4">
-              <a href="{{ .Permalink }}" class="px-4 py-5 bg-white shadow text-center d-block">
-                <i class="{{ .Params.Icon }} icon text-dark d-block mb-4"></i>
-                <h3 class="mb-3">{{ .Title }}</h3>
-                <p class="mb-0">{{ .Params.Description }}</p>
-              </a>
-            </div>
+            {{ range (where .Site.Sections "Type" "topics") }}
+	    <div class="col-lg-4 col-sm-6 mb-4">
+		<a href="{{ .Permalink }}" class="px-5 py-5 bg-white shadow text-center d-block topic-block">
+		    <i class="d-block mb-0">
+			<img class="topic-icon" src="{{ .Params.IconSrc | absURL }}">
+		    </i>
+		    <h3 class="mt-4 mb-4">{{ .Title }}</h3>
+		    <p class="mb-0">{{ .Params.Description }}</p>
+		</a>
+		<div class="{{ .Params.RectangleStyle }}"></div>
+	    </div>
             {{ end }}
         </div>
     </div>
@@ -31,7 +34,7 @@
           <div class="section bg-white shadow text-center">
           {{ with .Site.Params.cta.title }} <h2 class="mb-4">{{ . }}</h2> {{ end }}
           {{ with .Site.Params.cta.description }} <p class="mb-4">{{ . }}</p> {{ end }}
-          <a href="{{ with .Site.Params.cta.btnURL}}{{ . | absURL }}{{ end }}" class="btn btn-primary">{{ with .Site.Params.cta.btnText}}{{ . }}{{ end }}</a>
+          <a href="{{ with .Site.Params.cta.URL}}{{ . | absURL }}{{ end }}" class="btn btn-primary">{{ with .Site.Params.cta.btnText}}{{ . }}{{ end }}</a>
           </div>
         </div>
       </div>

@@ -1,19 +1,59 @@
 {{ "<!-- footer -->" | safeHTML }}
 <footer class="section bg-gray pb-0">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 text-md-left text-center">
-       {{ with .Site.Params.copyright }} <p>{{ .}}</p> {{ end }}
-      </div>
-      <div class="col-md-4 text-md-right text-center">
-        <ul class="list-inline mb-3">
-          {{ range .Site.Params.socialIcon }}
-          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="{{ .URL | absURL}}"><i class="{{ .icon }}"></i></a></li>
-          {{ end }}
-        </ul>
-      </div>
+    <div class="container">
+	<div class="row">
+	    <!-- LOGO -->
+	    <div class="col-md-2 text-md-left text-center">
+		<img class="logo" src="{{ .Site.Params.logoFooter | absURL }}" alt="Logo Footer">
+	    </div>
+	    <!-- ABOUT US -->
+	    <div class="col-md-3 text-md-left text-center">
+		<h6>{{ "About Us" | upper }}</h6>
+		<p>{{ .Site.Params.info.about }}</p>
+	    </div>
+	    <!-- PRODUCTS -->
+	    <div class="col-md-2 text-md-left text-center">
+		<h6>{{ "Products" | upper }}</h6>
+		<ul>
+		{{ range .Site.Menus.main }}
+		    <li><a class="paragraph p-0" href="{{ .URL }}"> {{ .Name | upper }} </a></li>
+		{{ end }}
+		</ul>
+	    </div>
+	    <!-- API DOC -->
+	    <div class="col-md-2 text-md-left text-center">
+		<h6>{{ "API Documentation" | upper }}</h6>
+		<ul>
+		{{ range .Site.Menus.api }}
+		    <li><a class="paragraph p-0" href="{{ .URL }}"> {{ .Name | upper }} </a></li>
+		{{ end }}
+		</ul>
+	    </div>
+	    <!-- Contact -->
+	    <div class="col-md-3 text-md-left text-center">
+		<h6>{{ "Contact" | upper }}</h6>
+		<div class="row">
+		    <div class="col">
+			<p>
+			    {{ .Site.Params.info.address }}<br>
+			    {{ .Site.Params.info.phone }}<br>
+			    {{ .Site.Params.info.email }}<br>
+			</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="col">
+		<hr />
+	    </div>
+	</div>
+	<div class="row text-right">
+	    <div class="col">
+		<p>{{ .Site.Params.copyright }}</p>
+	    </div>
+	</div>
     </div>
-  </div>
 </footer>
 {{ "<!-- /footer -->" | safeHTML }}
 
@@ -26,3 +66,4 @@
 {{ "<!-- Main Script -->" | safeHTML }}
 {{ $script := resources.Get "js/script.js" | minify}}
 <script src="{{ $script.Permalink }}"></script>
+<!-- <script src="{{ .Site.BaseURL }}js/script.js"></script> -->
